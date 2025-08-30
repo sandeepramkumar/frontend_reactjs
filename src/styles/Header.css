@@ -1,0 +1,20 @@
+.theme-toggle {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+body.dark-mode .navbar-nav .nav-link {
+  color: #e0e0e0 !important;
+}
+
+body.dark-mode .navbar-brand img {
+  filter: brightness(1.2);
+}
+
+.fixed-top {
+  height: 10vh;
+}

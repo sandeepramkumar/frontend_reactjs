@@ -1,0 +1,163 @@
+.shipment-table-container {
+  width: 100%;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.table-title {
+  font-size: 2rem;
+  margin: 0;
+  color: var(--text-color);
+  font-weight: 600;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.filter-toggle {
+  margin-left: 10px;
+}
+
+.search-input,
+.status-filter {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: var(--input-bg);
+  color: var(--text-color);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-input:focus,
+.status-filter:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.shipment-table {
+  background: var(--table-bg);
+  color: var(--text-color);
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.shipment-table th {
+  background: #e9ecef; /* Light gray header color */
+  color: #333; /* Dark text for contrast */
+  font-weight: 700;
+  border-bottom: 2px solid var(--border-color);
+  text-align: center;
+  cursor: pointer; /* Indicate sortable columns */
+  padding: 10px;
+}
+
+.shipment-table td {
+  border: 1px solid var(--border-color);
+}
+
+.shipment-row {
+  text-align: center;
+}
+
+.shipment-row:hover {
+  background: var(--row-hover-bg);
+  transition: background 0.2s ease;
+}
+
+.shipment-modal .modal-content {
+  background: var(--modal-bg);
+  color: var(--modal-text);
+}
+
+.shipment-modal h6 {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.shipment-modal p {
+  margin-bottom: 10px;
+}
+
+.shipment-modal .form-control,
+.shipment-modal .form-select {
+  background: var(--modal-input-bg);
+  color: var(--modal-text);
+  border: 1px solid var(--modal-border);
+}
+
+.filter-panel {
+  background: var(--input-bg);
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  border: 1px solid var(--border-color);
+}
+
+.filter-button {
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  margin: 0 5px;
+  border-radius: 4px;
+  min-width: 80px;
+  text-align: center;
+}
+
+body.light-mode {
+  --table-bg: #ffffff;
+  --input-bg: #ffffff;
+  --border-color: #dee2e6;
+  --text-color: #333;
+  --thead-bg: #f8f9fa;
+  --thead-text: #333;
+  --row-hover-bg: #f1f3f5;
+  --primary-color: #007bff;
+  --modal-bg: #ffffff;
+  --modal-text: #333;
+  --modal-input-bg: #ffffff;
+  --modal-border: #dee2e6;
+}
+
+body.dark-mode {
+  --table-bg: #1a1c23;
+  --input-bg: #2d3144;
+  --border-color: #3a4060;
+  --text-color: #e0e0e0;
+  --thead-bg: #252a38;
+  --thead-text: #ffffff;
+  --row-hover-bg: #2e3440;
+  --primary-color: #4dabf7;
+  --modal-bg: #1e222b;
+  --modal-text: #e0e0e0;
+  --modal-input-bg: #2d3144;
+  --modal-border: #3a4060;
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .filter-toggle {
+    margin-top: 10px;
+  }
+  .filter-panel .row {
+    flex-direction: column;
+  }
+  .filter-panel .col-md-4,
+  .filter-panel .col-md-8 {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .shipment-modal .modal-dialog {
+    margin: 10px;
+  }
+}

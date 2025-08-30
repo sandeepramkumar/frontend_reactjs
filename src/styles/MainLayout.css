@@ -1,0 +1,65 @@
+.layoutContainer {
+  min-height: 84vh;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.logo-container {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 2000; /* Ensure it stays above other elements */
+}
+
+.main-logo {
+  width: 58px;
+  height: 58px;
+}
+
+.content-wrapper {
+  margin-left: 16%; /* Matches sidebar width */
+  width: calc(84% - 80px); /* Adjust for padding/margin */
+  transition: all 0.3s ease;
+}
+
+.layout-content {
+  margin-top: 84px;
+  margin-bottom: 50px;
+  overflow-y: auto;
+  /* height: calc(97vh - 108px); */
+  transition: all 0.3s ease;
+  width: 107%;
+}
+
+body.dark-mode .layout-content {
+  color: #e0e0e0;
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    margin-left: 0;
+    width: 100%;
+  }
+  .layout-content {
+    height: auto;
+    margin-top: 56px;
+  }
+  .fixed-side-menu {
+    display: none; /* Hide sidebar on mobile */
+  }
+  .logo-container {
+    top: 10px;
+    left: 10px;
+  }
+}
+
+.navbar-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333; /* Default color for light mode */
+}
+
+body.dark-mode .navbar-title {
+  color: #e0e0e0; /* Title color in dark mode */
+}

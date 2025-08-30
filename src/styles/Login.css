@@ -1,0 +1,75 @@
+.login-container {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+  
+  .login-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  
+  .circle {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+    animation: float 6s infinite ease-in-out;
+  }
+  
+  body.dark-mode .circle {
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+  }
+  
+  .circle:nth-child(1) {
+    width: 200px;
+    height: 200px;
+    top: 10%;
+    left: 20%;
+  }
+  
+  .circle:nth-child(2) {
+    width: 150px;
+    height: 150px;
+    top: 60%;
+    right: 15%;
+    animation-delay: 2s;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  .login-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    transition: all 0.3s ease;
+  }
+  
+  body.light-mode .login-card {
+    --card-bg: rgba(255, 255, 255, 0.9);
+  }
+  
+  body.dark-mode .login-card {
+    --card-bg: rgba(42, 42, 62, 0.9);
+  }
+  
+  .theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .theme-toggle:hover {
+    transform: scale(1.1);
+  }

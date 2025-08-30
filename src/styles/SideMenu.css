@@ -1,0 +1,107 @@
+.fixed-side-menu {
+  position: fixed;
+  top: 58px;
+  bottom: 50px;
+  left: 0;
+  width: 16%;
+  background: var(--sidebar-bg);
+  border-right: 2px solid var(--border-color);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  padding: 10px 0;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-side-menu {
+  width: 250px;
+  background: var(--sidebar-bg);
+  transition: all 0.3s ease;
+}
+
+.sidebar-content {
+  height: 100%;
+  overflow-y: auto;
+  padding: 10px 0;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar-link {
+  color: var(--text-color);
+  padding: 12px 15px;
+  text-align: left;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  position: relative;
+  border-radius: 4px;
+}
+
+.sidebar-link:hover,
+.sidebar-link.active {
+  background: var(--hover-bg);
+  color: var(--hover-text);
+  border-left: 4px solid var(--hover-text);
+  font-weight: 500;
+}
+
+.theme-toggle-wrapper {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle-wrapper:hover {
+  transform: scale(1.05);
+}
+
+.logout-link {
+  cursor: pointer;
+  background: var(--logout-bg);
+  color: var(--logout-text);
+  transition: all 0.3s ease;
+}
+
+.logout-link:hover {
+  background: var(--logout-hover-bg);
+  color: var(--logout-hover-text);
+  border-left: 4px solid var(--logout-hover-text);
+}
+
+body.light-mode .fixed-side-menu,
+body.light-mode .mobile-side-menu {
+  --sidebar-bg: #f8f9fa;
+  --border-color: #dee2e6;
+  --text-color: #333;
+  --hover-bg: #e9ecef;
+  --hover-text: #007bff;
+  --logout-bg: #f8f9fa;
+  --logout-text: #dc3545;
+  --logout-hover-bg: #e9ecef;
+  --logout-hover-text: #c82333;
+}
+
+body.dark-mode .fixed-side-menu,
+body.dark-mode .mobile-side-menu {
+  --sidebar-bg: #2a2e3e;
+  --border-color: #3a4060;
+  --text-color: #e0e0e0;
+  --hover-bg: #3a4060;
+  --hover-text: #4dabf7;
+  --logout-bg: #2a2e3e;
+  --logout-text: #ff6b6b;
+  --logout-hover-bg: #3a4060;
+  --logout-hover-text: #ff8787;
+}
+
+@media (max-width: 768px) {
+  .fixed-side-menu {
+    display: none;
+  }
+}
